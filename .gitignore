@@ -1,7 +1,31 @@
+# Archivos compilados
 bin/
+build/
 target/
-.classpath
-.project
-.settings/
+
+# Maven / Gradle
+.mvn/
+.gradle/
+*.class
+# *.jar
+# *.war
+# *.ear
+
+# Tomcat / servidores
 .metadata/
+Servers/
 *.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Temporales
+*.tmp
+*.bak
+*.swp
+
+# VS Code (Solo para Sebastian, no afecta a Eclipse)
+.vscode/
+PASO_*.bat
+README_VS_CODE.md
