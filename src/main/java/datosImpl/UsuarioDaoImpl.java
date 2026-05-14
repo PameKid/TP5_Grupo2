@@ -12,12 +12,12 @@ public class UsuarioDaoImpl implements IUsuarioDao
 
 {
 	@Override
-    public Usuario buscarUsuario(String nombreUsuario, String pass) {
+    public Usuario buscarUsuario(String nombreUsuario, String pass) throws Exception {
         
         Usuario usuario = null;
         Connection con = Conexion.getInstancia().getConnection();
         
-        String sql = "SELECT * FROM usuarios WHERE nombre_usuario = ? AND pass = ?";
+        String sql = "SELECT * FROM usuarios WHERE usuario = ? AND contrasena = ?";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -28,11 +28,13 @@ public class UsuarioDaoImpl implements IUsuarioDao
             
             if (rs.next()) {
                 usuario = new Usuario();
-                usuario.setNombreUsuario(rs.getString("nombre_usuario"));
+                usuario.setNombreUsuario(rs.getString("usuario"));
+                usuario.setContrasena(rs.getString("contrasena"));
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
             }
             
         } catch (Exception e) {
-            e.printStackTrace();
+            throw e;
         }
         
         return usuario;
