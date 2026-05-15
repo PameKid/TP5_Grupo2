@@ -4,6 +4,6 @@ import entidad.Usuario;
 
 public interface IUsuarioNegocio {
 	
-	public Usuario validarUsuario(String nombreUsuario, String pass) throws Exception;
+	public Usuario validarUsuario(String nombreUsuario, String contrasena) throws Exception;
 	
 }

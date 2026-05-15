@@ -12,7 +12,7 @@ public class UsuarioDaoImpl implements IUsuarioDao
 
 {
 	@Override
-    public Usuario buscarUsuario(String nombreUsuario, String pass) throws Exception {
+    public Usuario buscarUsuario(String nombreUsuario, String contrasena) throws Exception {
         
         Usuario usuario = null;
         Connection con = Conexion.getInstancia().getConnection();
@@ -22,7 +22,7 @@ public class UsuarioDaoImpl implements IUsuarioDao
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, nombreUsuario);
-            ps.setString(2, pass);
+            ps.setString(2, contrasena);
             
             ResultSet rs = ps.executeQuery();
             
