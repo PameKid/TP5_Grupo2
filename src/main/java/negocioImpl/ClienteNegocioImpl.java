@@ -1,7 +1,5 @@
 package negocioImpl;
 
-import java.util.List;
-
 import negocio.IClienteNegocio;
 import entidad.Cliente;
 import datos.IClienteDao;
